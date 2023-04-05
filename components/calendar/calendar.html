@@ -1,0 +1,18 @@
+{# Ce qui est rendu par le composant #}
+{% load component_tags %}
+<div class="calendar-component" onload="loaded()" onclick="loaded()">
+    <div>
+        {% slot "title" %}
+            <p>This is the titletext</p>
+        {% endslot %}
+    </div>
+    Today's date is <span>{{ date }}</span> <br>{{ message }}
+    <div>
+        {% slot "content" %}
+            <h4>This is the contenttext:</h4>
+            <p>
+                {{ text }}
+            </p>
+        {% endslot %}
+    </div>
+</div>

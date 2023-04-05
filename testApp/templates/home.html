@@ -1,0 +1,25 @@
+{% load component_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    {% component_css_dependencies %}
+</head>
+<body>
+    {% component_js_dependencies %}
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h3>Bienvenue sur l'accueil</h3>
+        <div>
+            {% component_block "calendar" date=test_data message="Have a nice day" text="Hello guys" %}
+                {% fill "title" %}
+                    <p>Nouveau titre</p>
+                {% endfill %}
+            {% endcomponent_block %}
+            {% component "placeholder" title="titre du composant" %}
+        </div>
+    </div>
+</body>
+</html>
